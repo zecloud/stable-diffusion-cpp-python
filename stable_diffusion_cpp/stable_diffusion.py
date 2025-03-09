@@ -901,10 +901,10 @@ class StableDiffusion:
 
 
 def validate_dimensions(dimension: Union[int, float], attribute_name: str) -> int:
-    """Dimensions must be a multiple of 64 otherwise a GGML_ASSERT error is encountered."""
+    """Dimensions must be a multiple of 8 otherwise a GGML_ASSERT error is encountered."""
     dimension = int(dimension)
-    if dimension <= 0 or dimension % 64 != 0:
-        raise ValueError(f"The '{attribute_name}' must be a multiple of 64.")
+    if dimension <= 0 or dimension % 8 != 0:
+        raise ValueError(f"The '{attribute_name}' must be a multiple of 8.")
     return dimension
 
 
